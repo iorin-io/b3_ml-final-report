@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書籍ガチャ</title>
+    <script src="generated_pages.js"></script>
+    <script>
+        function goToRandomPage() {
+            // ランダムなインデックスを取得
+            const randomIndex = Math.floor(Math.random() * pages.length);
+            // ランダムなページに遷移
+            window.location.href = pages[randomIndex];
+        }
+    </script>
+</head>
+<body>
+    <h1>書籍ガチャ</h1>
+    <button onclick="goToRandomPage()">ガチャを引く</button>
+</body>
+</html>
