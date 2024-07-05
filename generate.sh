@@ -5,9 +5,10 @@ input_xml="data0422.xml"
 item_ids=$(xmllint --xpath "//item/@no" $input_xml | sed 's/no="\([0-9]*\)"/\1/g')
 echo "item_ids: $item_ids"
 
-for id in $item_ids; do
-    echo "item_id: $id"
-    xsltproc --stringparam item_id "$id" transform_item.xsl $input_xml > "book-$id.html"
+for id in $item_ids
+do
+  echo "item_id: $id"
+  xsltproc --stringparam item_id "$id" transform_item.xsl $input_xml > "book-$id.html"
 done
 
 echo "done"
