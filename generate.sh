@@ -3,7 +3,7 @@
 input_xml="data0422.xml"
 
 echo "Extracting item IDs from XML..."
-item_ids=$(xmllint --xpath "//item/@no" $input_xml | grep -o 'no="[0-9]*"' | sed 's/no="\([0-9]*\)"/\1/g')
+item_ids=$(xmllint --xpath "//item/@no" $input_xml | sed 's/no="\([0-9]*\)"/\1/g')
 echo "Item IDs extracted: $item_ids"
 
 for id in $item_ids; do
